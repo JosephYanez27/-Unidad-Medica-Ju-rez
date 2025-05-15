@@ -73,6 +73,17 @@ header {
     transform: scale(1.2);
     box-shadow: 0 0 15px rgba(56, 182, 255, 0.8); /* sombra al resaltar */
 }
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-left: auto;
+}
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -88,12 +99,20 @@ header {
         margin-bottom: 10px;
     }
 
+    .menu-toggle {
+        display: block;
+    }
+
     .menu {
+        display: none;
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
-        padding: 10px 0;
         gap: 10px;
+    }
+
+    .menu.active {
+        display: flex;
     }
 
     .menu a {
@@ -110,6 +129,7 @@ header {
         width: 50px;
     }
 }
+
 
 
 
