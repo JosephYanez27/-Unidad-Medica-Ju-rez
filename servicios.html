@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unidad Médica Juárez</title>
+  <link rel="stylesheet" href="Css/estilos.css" />
+ 
+
+
+</head>
+
+<body>
+  <header>
+    <div class="header-left">
+      <div class="logo">
+        <a href="index.html">
+          <img src="Imagenes/LogoJuarez3.PNG" alt="Unidad Médica Juárez" />
+        </a>
+      </div>
+      <div class="Title">
+        <h2>Unidad Médica Juárez</h2>
+      </div>
+    </div>
+
+    <nav class="menu">
+      <a href="index.html">Inicio</a>
+      <a href="Servicios.html">Servicios</a>
+      <a href="Nosotros.html">Nosotros</a>
+      <a href="Contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <section class="servicios-section">
+ <div class="Titulo-container">
+        <h1 class="Titulo">Servicios</h1>
+    </div>
+    <div class="servicios-grid">
+      <!-- Consulta General -->
+      <div class="servicio">
+        <button class="servicio-titulo" onclick="toggleLista('lista1')">Consulta General</button>
+        <ul class="servicio-lista" id="lista1">
+          <li>Consulta médica familiar</li>
+          <li>Valoración de signos vitales</li>
+          <li>Recetas médicas</li>
+        </ul>
+      </div>
+
+      <!-- Especialidades -->
+      <div class="servicio">
+        <button class="servicio-titulo" onclick="toggleLista('lista2')">Especialidades Médicas</button>
+        <ul class="servicio-lista" id="lista2">
+          <li>Psicologia (con cita)</li>
+          <li>Podologia(con cita)</li>
+          <li>Medicina Interna</li>
+          <li>Control Prenatal</li>
+          <li>Dermatología</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Estudios clínicos -->
+    <div class="servicio servicio-centrado">
+      <button class="servicio-titulo" onclick="toggleLista('lista3')">Estudios Clínicos</button>
+      <ul class="servicio-lista" id="lista3">
+        <li>Laboratorio de sangre</li>
+        <li>Rayos X</li>
+        <li>Ultrasonido</li>
+        <li>Prueba de embarazo en sangre</li>
+        <li>Perfil tiroideo</li>
+        <li>Electrocardiograma</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Unidad Médica Juárez. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    function toggleLista(id) {
+      const lista = document.getElementById(id);
+      lista.classList.toggle('mostrar');
+    }
+  </script>
+  
+</body>
+</html>
