@@ -22,13 +22,12 @@
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
 
-    <nav class="menu">
-            <a href="index.html">Inicio</a>
-            <a href="Servicios.html">Servicios</a>
-            <a href="Nosotros.html">Nosotros</a>
-            <a href="Contacto.html">Contacto</a>
-      
-    </nav>
+<nav id="main-menu" class="menu">
+    <a href="index.html">Inicio</a>
+    <a href="Servicios.html">Servicios</a>
+    <a href="Nosotros.html">Nosotros</a>
+    <a href="Contacto.html">Contacto</a>
+</nav>
 </header>
 
 <main>
@@ -103,13 +102,7 @@
 <footer>
     &copy; 2025 Unidad Médica Juárez. Todos los derechos reservados.
 </footer>
-<!--Java script para controlar el menú-->
-<script>
-    function toggleMenu() {
-        document.getElementById('menu').classList.toggle('show');
-    }
-</script>
-<!--Java script para controlar el accinamiento de el carrusel-->
+
 <script>
     let currentSlide = 0;
     const slides = document.querySelectorAll('.carousel-slide');
