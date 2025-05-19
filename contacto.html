@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unidad Médica Juárez</title>
+  <link rel="stylesheet" href="Css/estilos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <div class="logo">
+      <a href="index.html">
+        <img src="Imagenes/LogoJuarez3.PNG" alt="Unidad Médica Juárez">
+      </a>
+    </div>
+    <div class="Title">
+      <h2>Unidad Médica Juárez</h2>
+    </div>
+  </div>
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+
+<nav id="main-menu" class="menu">
+    <a href="index.html">Inicio</a>
+    <a href="Servicios.html">Servicios</a>
+    <a href="Nosotros.html">Nosotros</a>
+    <a href="Contacto.html">Contacto</a>
+</nav>
+</header>
+
+<section class="contact-section">
+
+    <div class="Titulo-container">
+        <h1 class="Titulo">Contactanos</h1>
+    </div>
+
+  <div class="contact-container" id="contact-container">
+    <!-- Información -->
+    <div class="contact-info" id="info-box">
+      <p><i class="fas fa-map-marker-alt"></i> <strong>Dirección:</strong> Zimapán 22, San Miguel Vindhó, 42842 San Miguel Vindho, Hgo.</p>
+      <p><i class="fas fa-phone-alt"></i> <strong>Teléfono:</strong> <a href="tel: 7737852296">7737852296 </a></p>
+      <p><i class="fas fa-phone-alt"></i> <strong>Teléfono:</strong> <a href="tel:  7737852297"> 7737852297 </a></p>
+      <p><i class="fas fa-envelope"></i> <strong>Email:</strong> medicaintegraljuarez@gmail.com</p>
+
+      <!-- Redes Sociales centradas -->
+<div class="social-icons-centered">
+  <a href="https://www.facebook.com/share/1EoT77ygMh/?mibextid=wwXIfr" target="_blank" class="icon-link" aria-label="Facebook">
+    <i class="fab fa-facebook fa-2x"></i>
+  </a>
+  <a href="https://www.tiktok.com/@UnidadMedicaJuarez" target="_blank" class="icon-link" aria-label="TikTok">
+    <i class="fab fa-tiktok fa-2x"></i>
+  </a>
+  <a href="https://wa.me/7731822958" target="_blank" class="icon-link" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp fa-2x"></i>
+  </a>
+    <a href="https://www.facebook.com/share/1EoT77ygMh/?mibextid=wwXIfr" target="_blank" class="icon-link" aria-label="Instagram">
+    <i class="fab fa-instagram fa-2x"></i></a>
+</div>
+
+
+      <div class="mapa-container">
+        <iframe 
+          src="https://www.google.com/maps?q=Zimap%C3%A1n+22,+San+Miguel+Vindh%C3%B3,+42842+San+Miguel+Vindh%C3%B3,+Hgo.&output=embed"
+          width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+
+      <button class="toggle-btn" onclick="toggleFormulario()">Enviar un mensaje</button>
+    </div>
+
+    <!-- Formulario oculto inicialmente -->
+    <div class="contact-form" id="formulario-contacto">
+     <form id="miFormulario">
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre" required>
+
+  <label for="correo">Correo electrónico:</label>
+  <input type="email" id="correo" name="correo" required>
+
+  <label for="mensaje">Mensaje:</label>
+  <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+  <button type="submit">ENVIAR MENSAJE</button>
+</form>
+
+<!-- Mensaje flotante de éxito -->
+<div id="mensaje-enviado" class="notificacion-exito oculto">
+  ✓ Correo enviado de forma satisfactoria
+</div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Unidad Médica Juárez. Todos los derechos reservados.
+</footer>
+
+<!-- Script para mostrar/ocultar formulario -->
+<script>
+  function toggleFormulario() {
+    const form = document.getElementById("formulario-contacto");
+    form.classList.toggle("active");
+  }
+</script>
+<script>
+  document.getElementById("miFormulario").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    fetch("https://formsubmit.co/ajax/medicaintegraljuarez@gmail.com", {
+      method: "POST",
+      body: data
+    })
+    .then(response => {
+      if (response.ok) {
+        const mensaje = document.getElementById("mensaje-enviado");
+        mensaje.classList.remove("oculto");
+
+        setTimeout(() => {
+          mensaje.classList.add("oculto");
+        }, 5000);
+
+        form.reset();
+      } else {
+        alert("Hubo un problema al enviar el mensaje.");
+      }
+    })
+    .catch(error => {
+      alert("Error en el envío: " + error.message);
+    });
+  });
+</script>
+
+
+
+</body>
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('main-menu');
+        menu.classList.toggle('active');
+    }
+</script>
+</html>
