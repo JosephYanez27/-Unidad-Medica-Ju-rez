@@ -19,14 +19,15 @@
             <h2>Unidad Médica Juárez</h2>
         </div>
     </div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
-    <nav class="menu">
-            <a href="index.html">Inicio</a>
-            <a href="servicios.html">Servicios</a>
-            <a href="nosotros.html">Nosotros</a>
-            <a href="contacto.html">Contacto</a>
-      
-    </nav>
+
+<nav id="main-menu" class="menu">
+    <a href="index.html">Inicio</a>
+    <a href="Servicios.html">Servicios</a>
+    <a href="Nosotros.html">Nosotros</a>
+    <a href="Contacto.html">Contacto</a>
+</nav>
 </header>
  <div class="Titulo-container">
         <h1 class="Titulo">Nosotros</h1>
@@ -73,4 +74,10 @@
 </footer>
 
 </body>
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('main-menu');
+        menu.classList.toggle('active');
+    }
+</script>
 </html>
