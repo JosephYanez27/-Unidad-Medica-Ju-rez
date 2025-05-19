@@ -23,12 +23,15 @@
     </div>
   </div>
 
-  <nav class="menu">
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+
+<nav id="main-menu" class="menu">
     <a href="index.html">Inicio</a>
     <a href="Servicios.html">Servicios</a>
     <a href="Nosotros.html">Nosotros</a>
     <a href="Contacto.html">Contacto</a>
-  </nav>
+</nav>
 </header>
 
 <section class="contact-section">
@@ -140,4 +143,10 @@
 
 
 </body>
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('main-menu');
+        menu.classList.toggle('active');
+    }
+</script>
 </html>
