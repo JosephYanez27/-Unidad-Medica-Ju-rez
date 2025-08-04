@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unidad Médica Juárez</title>
+  <link rel="stylesheet" href="Css/estilos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8JR9TXMN5W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8JR9TXMN5W');
+</script>
+</head>
+
+<body>
+  <header>
+    <div class="header-left">
+      <div class="logo">
+        <a href="index.html">
+          <img src="Imagenes/LogoJuarez3.PNG" alt="Unidad Médica Juárez" />
+        </a>
+      </div>
+      <div class="Title">
+        <h2>Unidad Médica Juárez</h2>
+      </div>
+    </div>
+
+     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+
+<nav id="main-menu" class="menu">
+    <a href="index.html">Inicio</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+</nav>
+  </header>
+
+  <section class="servicios-section">
+ <div class="Titulo-container">
+        <h1 class="Titulo">Servicios</h1>
+       
+    </div>
+  
+       <!-- Sucursal Hidalgo -->
+  <div class="sucursal">
+    <h2 class="sucursal-titulo">Sucursal Hidalgo</h2>
+
+    <div class="bio-accordion">
+      <button onclick="toggleAccordion(this)">
+        <span><i class="fas fa-user-md"></i> Consulta Médica General</span>
+        <i class="fas fa-chevron-down arrow"></i>
+      </button>
+      <div class="bio-accordion-content">
+        <ul>
+          <li>Consulta médica familiar</li>
+          <li>Valoración de signos vitales</li>
+          <li>Recetas médicas</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bio-accordion">
+      <button onclick="toggleAccordion(this)">
+        <span><i class="fas fa-user-nurse"></i> Consulta Especializada</span>
+        <i class="fas fa-chevron-down arrow"></i>
+      </button>
+      <div class="bio-accordion-content">
+        <ul>
+          <li>Psicología (con cita)</li>
+          <li>Podología (con cita)</li>
+          <li>Medicina Interna</li>
+          <li>Control Prenatal</li>
+          <li>Nefrología (con cita)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bio-accordion">
+      <button onclick="toggleAccordion(this)">
+        <span><i class="fas fa-vials"></i> Laboratorio Clínico</span>
+        <i class="fas fa-chevron-down arrow"></i>
+      </button>
+      <div class="bio-accordion-content">
+        <ul>
+          <li>Laboratorio de sangre</li>
+          <li>Rayos X</li>
+          <li>Ultrasonido</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bio-accordion">
+      <button onclick="toggleAccordion(this)">
+        <span><i class="fas fa-microscope"></i> Procedimientos Diagnósticos</span>
+        <i class="fas fa-chevron-down arrow"></i>
+      </button>
+      <div class="bio-accordion-content">
+        <ul>
+          <li>Prueba de embarazo en sangre</li>
+          <li>Perfil tiroideo</li>
+          <li>Electrocardiograma</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sucursal Conejos -->
+  <div class="sucursal">
+    <h2 class="sucursal-titulo">Sucursal Conejos</h2>
+
+    <div class="bio-accordion">
+      <button onclick="toggleAccordion(this)">
+        <span><i class="fas fa-user-md"></i> Consulta</span>
+        <i class="fas fa-chevron-down arrow"></i>
+      </button>
+      <div class="bio-accordion-content">
+        <ul>
+          <li>Consulta médica general</li>
+          <li>Consulta rápida</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bio-accordion">
+      <button onclick="toggleAccordion(this)">
+        <span><i class="fas fa-prescription-bottle-alt"></i> Farmacia</span>
+        <i class="fas fa-chevron-down arrow"></i>
+      </button>
+      <div class="bio-accordion-content">
+        <ul>
+          <li>Medicamentos genéricos y de patente</li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sucursal Puebla -->
+  <div class="sucursal">
+    <h2 class="sucursal-titulo">Sucursal Puebla</h2>
+
+    <div class="bio-accordion">
+      <button onclick="toggleAccordion(this)">
+        <span><i class="fas fa-prescription-bottle"></i> Farmacia</span>
+        <i class="fas fa-chevron-down arrow"></i>
+      </button>
+      <div class="bio-accordion-content">
+        <ul>
+          <li>Altamente surtida </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
+  </section>
+
+  <footer>
+    &copy; 2025 Unidad Médica Juárez. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    function toggleLista(id) {
+      const lista = document.getElementById(id);
+      lista.classList.toggle('mostrar');
+    }
+  </script>
+  <script>
+  function toggleAccordion(button) {
+    const accordion = button.parentElement;
+    accordion.classList.toggle('active');
+  }
+</script>
+</body>
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('main-menu');
+        menu.classList.toggle('active');
+    }
+</script>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unidad Médica Juárez</title>
+  <link rel="stylesheet" href="Css/estilos.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-8JR9TXMN5W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-8JR9TXMN5W');
+</script>
+
+</head>
+<body>
+
+<header>
+  <div class="header-left">
+    <div class="logo">
+      <a href="index.html">
+        <img src="Imagenes/LogoJuarez3.PNG" alt="Unidad Médica Juárez">
+      </a>
+    </div>
+    <div class="Title">
+      <h2>Unidad Médica Juárez</h2>
+    </div>
+  </div>
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+
+<nav id="main-menu" class="menu">
+    <a href="index.html">Inicio</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+</nav>
+</header>
+
+<section class="contact-section">
+
+    <div class="Titulo-container">
+        <h1 class="Titulo">Contactanos</h1>
+        <div class="barra-localidades">
+  <a href="contacto.html" class="btn-localidad">Principal</a>
+  <a href="conpuebla.html" class="btn-localidad">Puebla</a>
+</div>
+
+    </div>
+
+  <div class="contact-container" id="contact-container">
+    <!-- Información -->
+    <div class="contact-info" id="info-box">
+      <p><i class="fas fa-map-marker-alt"></i> <strong>Dirección:</strong> Calle Av Álvaro Obregón sn col. La cañada de atotonilco CP. 42988</p>
+      <p><i class="fas fa-phone-alt"></i> <strong>Teléfono Farmacia:</strong> <a href="tel: 7786882903">7786882903 </a></p>
+      <p><i class="fas fa-phone-alt"></i> <strong>Teléfono Consultorio:</strong> <a href="tel: 7732460044"> 7732460044 </a></p>
+     <p><i class="fas fa-briefcase-medical"></i> <strong>Servicios:</strong> Farmacia y Consultorio</p>
+
+      <div class="mapa-container">
+        <iframe 
+          src="https://www.google.com/maps?q=Av+Álvaro+Obregón+s%2Fn,+La+Cañada+de+Atotonilco,+42988,+Hidalgo&output=embed"
+          width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+
+      <button class="toggle-btn" onclick="toggleFormulario()">Enviar un mensaje</button>
+    </div>
+
+    <!-- Formulario oculto inicialmente -->
+    <div class="contact-form" id="formulario-contacto">
+     <form id="miFormulario">
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre" required>
+
+  <label for="correo">Correo electrónico:</label>
+  <input type="email" id="correo" name="correo" required>
+
+  <label for="mensaje">Mensaje:</label>
+  <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+  <button type="submit">ENVIAR MENSAJE</button>
+</form>
+
+<!-- Mensaje flotante de éxito -->
+<div id="mensaje-enviado" class="notificacion-exito oculto">
+  ✓ Correo enviado de forma satisfactoria
+</div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Unidad Médica Juárez. Todos los derechos reservados.
+</footer>
+
+<!-- Script para mostrar/ocultar formulario -->
+<script>
+  function toggleFormulario() {
+    const form = document.getElementById("formulario-contacto");
+    form.classList.toggle("active");
+  }
+</script>
+<script>
+  document.getElementById("miFormulario").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    fetch("https://formsubmit.co/ajax/medicaintegraljuarez@gmail.com", {
+      method: "POST",
+      body: data
+    })
+    .then(response => {
+      if (response.ok) {
+        const mensaje = document.getElementById("mensaje-enviado");
+        mensaje.classList.remove("oculto");
+
+        setTimeout(() => {
+          mensaje.classList.add("oculto");
+        }, 5000);
+
+        form.reset();
+      } else {
+        alert("Hubo un problema al enviar el mensaje.");
+      }
+    })
+    .catch(error => {
+      alert("Error en el envío: " + error.message);
+    });
+  });
+</script>
+
+
+
+</body>
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('main-menu');
+        menu.classList.toggle('active');
+    }
+</script>
+</html>
