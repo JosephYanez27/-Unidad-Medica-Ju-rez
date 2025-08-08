@@ -1,9 +1,0 @@
-/sitemap.xml
-  Content-Type: application/xml
-
-/*
-  X-Frame-Options: DENY
-  X-XSS-Protection: 1; mode=block
-  X-Content-Type-Options: nosniff
-  Access-Control-Allow-Origin: *
-  Referrer-Policy: no-referrer
