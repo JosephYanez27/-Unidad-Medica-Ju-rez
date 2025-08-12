@@ -23,10 +23,13 @@ header {
 .menu {
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: #003366;
-    padding: 15px 0;
-    gap: 18px;
+    padding: 15px 30px;
+    gap: 20px;
     font-family: Arial, sans-serif;
+    flex-wrap: wrap; /* Mejor para móviles */
+   
 }
 
 .menu a {
@@ -38,23 +41,53 @@ header {
     transition: color 0.3s ease;
 }
 
-.menu a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0%;
-    height: 2px;
-    background-color: #38b6ff;
-    transition: width 0.3s ease;
-}
 
 .menu a:hover {
-    color: #38b6ff;
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
 }
 
-.menu a:hover::after {
-    width: 100%;
+.menu a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background-color: #c62828;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+.menu a:hover,
+.menu a.active {
+    color: #c62828; /* Rojo en hover y activo */
+}
+
+.menu a:hover::after,
+.menu a.active::after {
+    width: 60%;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: whitesmoke;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 }
 
 
@@ -74,15 +107,7 @@ header {
     box-shadow: 0 0 15px rgba(56, 182, 255, 0.8); /* sombra al resaltar */
 }
 
-.menu-toggle {
-    display: none;
-    font-size: 28px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    margin-left: auto;
-}
+
 
 @media (max-width: 768px) {
     header {
@@ -99,9 +124,7 @@ header {
         margin-bottom: 10px;
     }
 
-    .menu-toggle {
-        display: block;
-    }
+  
 
     .menu {
         display: none;
@@ -836,14 +859,31 @@ body {
     padding: 1rem 1.2rem;
     font-size: 1rem;
   }
-  
-  .servicio-lista.mostrar {
-    padding: 1rem;
+    #info-salud {
+    padding: 3rem 0;
   }
   
-  .servicio-lista li {
-    padding: 0.7rem 0.8rem 0.7rem 2.5rem;
+  #info-salud .section-title {
+    font-size: 2rem;
   }
+  
+  #info-salud .lead {
+    font-size: 1rem;
+  }
+  
+  #info-salud .search-input {
+    padding: 12px 20px 12px 45px;
+  }
+  
+  #info-salud .col-md-4 {
+    margin-bottom: 1.5rem;
+  }
+  
+  #lista-enfermedades .col-md-4 {
+    margin-bottom: 1.5rem;
+  }
+  
+ 
 }
 
 
@@ -1478,28 +1518,3 @@ i.fas {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  #info-salud {
-    padding: 3rem 0;
-  }
-  
-  #info-salud .section-title {
-    font-size: 2rem;
-  }
-  
-  #info-salud .lead {
-    font-size: 1rem;
-  }
-  
-  #info-salud .search-input {
-    padding: 12px 20px 12px 45px;
-  }
-  
-  #info-salud .col-md-4 {
-    margin-bottom: 1.5rem;
-  }
-  
-  #lista-enfermedades .col-md-4 {
-    margin-bottom: 1.5rem;
-  }
-}
