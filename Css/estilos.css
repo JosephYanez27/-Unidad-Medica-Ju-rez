@@ -566,10 +566,13 @@ footer {
 .toggle-btn:hover {
     background-color: #dbe5ff;
 }
-.fas fa-envelope {
-    word-break: break-all; /* o usa break-word en lugar de break-all */
+
+.email-text {
+    word-break: break-word;
     overflow-wrap: break-word;
+    white-space: normal;
 }
+
 
 .contact-form {
     flex: 0 0 0%;
