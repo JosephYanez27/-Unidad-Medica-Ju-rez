@@ -566,6 +566,10 @@ footer {
 .toggle-btn:hover {
     background-color: #dbe5ff;
 }
+.fas fa-envelope {
+    word-break: break-all; /* o usa break-word en lugar de break-all */
+    overflow-wrap: break-word;
+}
 
 .contact-form {
     flex: 0 0 0%;
