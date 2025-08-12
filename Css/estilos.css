@@ -1517,4 +1517,23 @@ i.fas {
   animation-duration: 0.8s;
 }
 
-/* Responsive */
+.familia-section {
+  text-align: center;
+  padding: 30px 15px;
+  background-color: #f8f8f8;
+}
+
+.familia-section h3 {
+  font-size: 1.8rem;
+  color: #003366;
+  margin-bottom: 15px;
+}
+
+.familia-img {
+  max-width: 40%; /* antes estaba en 100% */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+
